@@ -20,16 +20,17 @@ export class Driver {
   }
 
   public async initialize(): Promise<void> {
+    const headless = process.env.CI ? true : this.config.headless;
     const browserType = this.config.browser;
     switch (browserType) {
       case 'chromium':
-        this.browser = await chromium.launch({ headless: this.config.headless, slowMo: this.config.slowMo });
+        this.browser = await chromium.launch({ headless, slowMo: this.config.slowMo });
         break;
       case 'firefox':
-        this.browser = await firefox.launch({ headless: this.config.headless, slowMo: this.config.slowMo });
+        this.browser = await firefox.launch({ headless, slowMo: this.config.slowMo });
         break;
       case 'webkit':
-        this.browser = await webkit.launch({ headless: this.config.headless, slowMo: this.config.slowMo });
+        this.browser = await webkit.launch({ headless, slowMo: this.config.slowMo });
         break;
       default:
         throw new Error(`Unsupported browser: ${browserType}`);
