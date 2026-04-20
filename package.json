@@ -1,0 +1,38 @@
+{
+  "name": "typescript-playwright-bdd-framework",
+  "version": "1.0.0",
+  "description": "A complete test automation framework using TypeScript, Playwright, and Cucumber for BDD testing on demoqa.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:headed": "cucumber-js --exit",
+    "test:ci": "cucumber-js --exit --format json:reports/cucumber-report.json",
+    "report": "node utils/generate-report.js",
+    "install-browsers": "playwright install",
+    "lint": "eslint src/**/*.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "bdd",
+    "typescript",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.0.0",
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.58.2",
+    "@typescript-eslint/parser": "^8.58.2",
+    "cucumber-html-reporter": "^5.5.0",
+    "eslint": "^8.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}

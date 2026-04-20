@@ -1,0 +1,8 @@
+node_modules/
+dist/
+reports/
+screenshots/
+videos/
+test-results/
+*.log
+.env
